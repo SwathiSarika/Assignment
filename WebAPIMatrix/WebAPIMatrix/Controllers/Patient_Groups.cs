@@ -17,7 +17,7 @@ namespace WebAPIMatrix.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value13", "value23" };
+            return new string[] { "Welcome" };
         }
 
        
@@ -34,21 +34,21 @@ namespace WebAPIMatrix.Controllers
            
             var mat =  json["matrix"];
             string json1 = JsonConvert.SerializeObject(mat, Formatting.Indented);
-            int[][] A = JsonConvert.DeserializeObject<int[][]>(json1);
+            int[][] patients = JsonConvert.DeserializeObject<int[][]>(json1);
 
             int totalNumGroups = 0;
-            int curCnt = 0;
+           
 
-            for (int x = 0; x < A.Length; x++)
+            for (int x = 0; x < patients.Length; x++)
             {
-                for (int y = 0; y < A[x].Length; y++)
+                for (int y = 0; y < patients[x].Length; y++)
                 {
-                    if (A[x][y] == 1)
+                    if (patients[x][y] == 1)
                     {
-                        curCnt = 0;
-                        totalNumGroups = totalNumGroups + cleanBlock(A, x, y, curCnt);
+                        
+                        totalNumGroups = totalNumGroups + clearBlock(patients, x, y);
                     }
-                    // else (0), keep curCnt and totalNumGroups as are.
+                    
                 }
             }
 
@@ -61,53 +61,54 @@ namespace WebAPIMatrix.Controllers
             return Ok(result);
 
         }
-        public static int cleanBlock(int[][] A, int x, int y, int cnt)
+        //Make all the group of 1's as 0's
+        public static int clearBlock(int[][] patients, int x, int y)
         {
-            A[x][y] = 0;
-            if (inMatrix(x - 1, y, A.Length, A[0].Length) == 1 && A[x - 1][y] == 1)
+            patients[x][y] = 0;
+            if (withinMatrix(x - 1, y, patients.Length, patients[0].Length) == 1 && patients[x - 1][y] == 1)
             {
-                cleanBlock(A, x - 1, y, cnt);
-                cnt = 1;
+                clearBlock(patients, x - 1, y);
+                
             }
-            if (inMatrix(x + 1, y, A.Length, A[0].Length) == 1 && A[x + 1][y] == 1)
+            if (withinMatrix(x + 1, y, patients.Length, patients[0].Length) == 1 && patients[x + 1][y] == 1)
             {
-                cleanBlock(A, x + 1, y, cnt);
-                cnt = 1;
+                clearBlock(patients, x + 1, y);
+               
             }
-            if (inMatrix(x, y - 1, A.Length, A[0].Length) == 1 && A[x][y - 1] == 1)
+            if (withinMatrix(x, y - 1, patients.Length, patients[0].Length) == 1 && patients[x][y - 1] == 1)
             {
-                cleanBlock(A, x, y - 1, cnt);
-                cnt = 1;
+                clearBlock(patients, x, y - 1);
+               
             }
-            if (inMatrix(x, y + 1, A.Length, A[0].Length) == 1 && A[x][y + 1] == 1)
+            if (withinMatrix(x, y + 1, patients.Length, patients[0].Length) == 1 && patients[x][y + 1] == 1)
             {
-                cleanBlock(A, x, y + 1, cnt);
-                cnt = 1;
+                clearBlock(patients, x, y + 1);
+               
             }
-            if (inMatrix(x - 1, y-1, A.Length, A[0].Length) == 1 && A[x - 1][y-1] == 1)
+            if (withinMatrix(x - 1, y-1, patients.Length, patients[0].Length) == 1 && patients[x - 1][y-1] == 1)
             {
-                cleanBlock(A, x - 1, y-1, cnt);
-                cnt = 1;
+                clearBlock(patients, x - 1, y-1);
+                
             }
-            if (inMatrix(x - 1, y+1, A.Length, A[0].Length) == 1 && A[x - 1][y+1] == 1)
+            if (withinMatrix(x - 1, y+1, patients.Length, patients[0].Length) == 1 && patients[x - 1][y+1] == 1)
             {
-                cleanBlock(A, x -1, y+1, cnt);
-                cnt = 1;
+                clearBlock(patients, x -1, y+1);
+               
             }
-            if (inMatrix(x+1, y - 1, A.Length, A[0].Length) == 1 && A[x+1][y - 1] == 1)
+            if (withinMatrix(x+1, y - 1, patients.Length, patients[0].Length) == 1 && patients[x+1][y - 1] == 1)
             {
-                cleanBlock(A, x+1, y - 1, cnt);
-                cnt = 1;
+                clearBlock(patients, x+1, y - 1);
+               
             }
-            if (inMatrix(x+1, y + 1, A.Length, A[0].Length) == 1 && A[x+1][y + 1] == 1)
+            if (withinMatrix(x+1, y + 1, patients.Length, patients[0].Length) == 1 && patients[x+1][y + 1] == 1)
             {
-                cleanBlock(A, x+1, y + 1, cnt);
-                cnt = 1;
+                clearBlock(patients, x+1, y + 1);
+               
             }
             return 1;
         }
-
-        public static int inMatrix(int x, int y, int lenX, int lenY)
+        //check position of matrix is within the boundary of matrix
+        public static int withinMatrix(int x, int y, int lenX, int lenY)
         {
             if ((x >= 0 && x <= (lenX - 1)) && (y >= 0 && y <= (lenY - 1)))
                 return 1;
