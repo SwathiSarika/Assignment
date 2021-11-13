@@ -1,0 +1,14 @@
+c:\users\sarika.swathi\source\repos\WebAPIMatrix\WebAPIMatrix\bin\Debug\netcoreapp2.1\WebAPIMatrix.deps.json
+c:\users\sarika.swathi\source\repos\WebAPIMatrix\WebAPIMatrix\bin\Debug\netcoreapp2.1\WebAPIMatrix.runtimeconfig.json
+c:\users\sarika.swathi\source\repos\WebAPIMatrix\WebAPIMatrix\bin\Debug\netcoreapp2.1\WebAPIMatrix.runtimeconfig.dev.json
+c:\users\sarika.swathi\source\repos\WebAPIMatrix\WebAPIMatrix\bin\Debug\netcoreapp2.1\WebAPIMatrix.dll
+c:\users\sarika.swathi\source\repos\WebAPIMatrix\WebAPIMatrix\bin\Debug\netcoreapp2.1\WebAPIMatrix.pdb
+c:\users\sarika.swathi\source\repos\WebAPIMatrix\WebAPIMatrix\obj\Debug\netcoreapp2.1\WebAPIMatrix.csprojAssemblyReference.cache
+c:\users\sarika.swathi\source\repos\WebAPIMatrix\WebAPIMatrix\obj\Debug\netcoreapp2.1\WebAPIMatrix.csproj.CoreCompileInputs.cache
+c:\users\sarika.swathi\source\repos\WebAPIMatrix\WebAPIMatrix\obj\Debug\netcoreapp2.1\WebAPIMatrix.RazorAssemblyInfo.cache
+c:\users\sarika.swathi\source\repos\WebAPIMatrix\WebAPIMatrix\obj\Debug\netcoreapp2.1\WebAPIMatrix.RazorAssemblyInfo.cs
+c:\users\sarika.swathi\source\repos\WebAPIMatrix\WebAPIMatrix\obj\Debug\netcoreapp2.1\WebAPIMatrix.AssemblyInfoInputs.cache
+c:\users\sarika.swathi\source\repos\WebAPIMatrix\WebAPIMatrix\obj\Debug\netcoreapp2.1\WebAPIMatrix.AssemblyInfo.cs
+c:\users\sarika.swathi\source\repos\WebAPIMatrix\WebAPIMatrix\obj\Debug\netcoreapp2.1\WebAPIMatrix.RazorTargetAssemblyInfo.cache
+c:\users\sarika.swathi\source\repos\WebAPIMatrix\WebAPIMatrix\obj\Debug\netcoreapp2.1\WebAPIMatrix.dll
+c:\users\sarika.swathi\source\repos\WebAPIMatrix\WebAPIMatrix\obj\Debug\netcoreapp2.1\WebAPIMatrix.pdb
