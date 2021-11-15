@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -13,11 +14,57 @@ namespace WebAPIMatrix.Controllers
     [ApiController]
     public class Patient_GroupsController : ControllerBase
     {
+        public class Item
+        {
+            public string login { get; set; }
+            public int id { get; set; }
+            public string node_id { get; set; }
+            public string url { get; set; }
+            public string repos_url { get; set; }
+            public string  events_url { get; set; }
+            public string hooks_url { get; set; }
+            public string issues_url { get; set; }
+            public string members_url { get; set; }
+            public string public_members_url { get; set; }
+            public string avatar_url { get; set; }
+            public string description { get; set; }
+        }
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
             return new string[] { "Welcome" };
+        }
+        [HttpGet("GetMinMaxValues")]
+        public IActionResult GetMinMaxValues()
+        {
+           // string html = string.Empty;
+            var url = "https://api.github.com/users/hadley/orgs";
+            WebClient webClient = new WebClient();
+            webClient.Headers.Add("user-agent", "Only a test!");
+            string content = webClient.DownloadString(url);
+           
+            var json = JsonConvert.DeserializeObject<List<Item>>(content);// JsonConvert.DeserializeObject(content);
+            var min = json[0].id;
+            var max = json[0].id;
+            foreach (var val in json)
+            {
+                if (val.id < min)
+                    min = val.id;
+                if (val.id > max)
+                    max = val.id;
+            }
+
+
+            //var list = json["id"];
+
+            var result = new
+            {
+                minValue = min,
+                maxValue=max
+
+            };
+            return Ok(result);
         }
 
        

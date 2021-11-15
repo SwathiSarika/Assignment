@@ -11808,11 +11808,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\users\\sarika.swathi\\source\\repos\\WebAPIMatrix\\WebAPIMatrix\\WebAPIMatrix.csproj",
+      "projectUniqueName": "C:\\Users\\sarika.swathi\\Assignment\\WebAPIMatrix\\WebAPIMatrix\\WebAPIMatrix.csproj",
       "projectName": "WebAPIMatrix",
-      "projectPath": "c:\\users\\sarika.swathi\\source\\repos\\WebAPIMatrix\\WebAPIMatrix\\WebAPIMatrix.csproj",
+      "projectPath": "C:\\Users\\sarika.swathi\\Assignment\\WebAPIMatrix\\WebAPIMatrix\\WebAPIMatrix.csproj",
       "packagesPath": "C:\\Users\\sarika.swathi\\.nuget\\packages\\",
-      "outputPath": "c:\\users\\sarika.swathi\\source\\repos\\WebAPIMatrix\\WebAPIMatrix\\obj\\",
+      "outputPath": "C:\\Users\\sarika.swathi\\Assignment\\WebAPIMatrix\\WebAPIMatrix\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
